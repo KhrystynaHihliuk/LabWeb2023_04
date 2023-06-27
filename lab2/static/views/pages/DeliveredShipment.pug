@@ -1,0 +1,44 @@
+extends ../layout.pug
+
+block prepend styles
+  link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+  div(class='breadcrumb')
+    li= title
+  form(id='update-form' name='update-form update-form-hidden' class='form-inline update-form' action='')
+    div(class='form-group')
+      div(class='col-md-12')
+        button(id='btn-update' type='submit' class='btn btn-primary') Update
+    div(class='form-group')
+      div(class='col-md-12')
+        button(id='btn-cancel' type='button' class='btn btn-danger') Cancel
+
+  form(id='DeliveredShipment-add-form' name='DeliveredShipment-add-form' class='form-inline' action='')
+    div(class='form-group')
+      div(class='col-md-4')
+        label(for='shipment') Shipment
+      div(class='col-md-9')
+        select(id='shipment' name='shipment')
+    div(class='form-group')
+      div(class='col-md-4')
+        label(for='planetName') Planet
+      div(class='col-md-9')
+        select(id='planetName' name='planetName')
+    div(class='form-group')
+      div(class='col-md-4')
+        label(for='spaceStationsName') SpaceStation
+      div(class='col-md-9')
+        select(id='spaceStationsName' name='spaceStationsName')
+    div(class='form-group')
+      div(class='col-md-12')
+        button(type='submit' class='btn btn-primary') Create
+    div.list-wrapper
+      table(id='DeliveredShipment-list')
+block append scripts
+  script(src='/static/js/models/DeliveredShipment.js')
+  script(src='/static/js/models/SpaceStation.js')
+  script(src='/static/js/models/planet.js')
+  script(src='/static/js/models/Shipment.js')
+  script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+  script(src='/static/js/views/DeliveredShipment.js')

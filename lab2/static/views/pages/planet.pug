@@ -1,0 +1,57 @@
+extends ../layout.pug
+
+block prepend styles
+    link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+    div(class='breadcrumb')
+        li= title
+    form(id='update-form' name='update-form update-form-hidden' class='form-inline update-form' action='')
+        div(class='form-group')
+            div(class='col-md-7')
+                label(for='update_name') New Name
+            div(class='col-md-9')
+                input(id='update_name' name='update_name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-7')
+                label(for='update_storeCapacity') New StoreCapacity
+            div(class='col-md-9')
+                input(id='update_storeCapacity' name='update_storeCapacity' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-7')
+                label(for='update_mass') New Mass
+            div(class='col-md-9')
+                input(id='update_mass' name='update_mass' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(id='btn-update' type='submit' class='btn btn-primary') Update
+        div(class='form-group')
+            div(class='col-md-12')
+                button(id='btn-cancel' type='button' class='btn btn-danger') Cancel
+
+
+    form(id='planet-add-form' name='planet-add-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-2')
+                label(for='name') Name
+            div(class='col-md-9')
+                input(id='name' name='name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-4')
+                label(for='name') StoreCapacity
+            div(class='col-md-8')
+                input(id='StoreCapacity' name='StoreCapacity' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-2')
+                label(for='name') Mass
+            div(class='col-md-9')
+                input(id='mass' name='mass' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Create
+        div.list-wrapper
+            table(id='planet-list')
+block append scripts
+    script(src='/static/js/models/planet.js')
+    script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+    script(src='/static/js/views/planet.js')

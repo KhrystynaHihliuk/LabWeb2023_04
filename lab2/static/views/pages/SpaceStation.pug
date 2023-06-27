@@ -1,0 +1,56 @@
+extends ../layout.pug
+
+block prepend styles
+    link(rel='stylesheet' href='//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css')
+
+block content
+    div(class='breadcrumb')
+        li= title
+    form(id='update-form' name='update-form update-form-hidden' class='form-inline update-form' action='')
+        div(class='form-group')
+            div(class='col-md-7')
+                label(for='update_name') New Name
+            div(class='col-md-9')
+                input(id='update_name' name='update_name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-7')
+                label(for='update_capacity') New Capacity
+            div(class='col-md-9')
+                input(id='update_capacity' name='update_capacity' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-7')
+                label(for='update_need') New Need
+            div(class='col-md-9')
+                input(id='update_need' name='update_need' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(id='btn-update' type='submit' class='btn btn-primary') Update
+        div(class='form-group')
+            div(class='col-md-12')
+                button(id='btn-cancel' type='button' class='btn btn-danger') Cancel
+
+    form(id='SpaceStation-add-form' name='SpaceStation-add-form' class='form-inline' action='')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='name') Name
+            div(class='col-md-9')
+                input(id='name' name='name' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='capacity') Capacity
+            div(class='col-md-9')
+                input(id='capacity' name='capacity' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-3')
+                label(for='need') Need
+            div(class='col-md-9')
+                input(id='need' name='need' value='' class='form-control')
+        div(class='form-group')
+            div(class='col-md-12')
+                button(type='submit' class='btn btn-primary') Create
+        div.list-wrapper
+            table(id='SpaceStation-list')
+block append scripts
+    script(src='/static/js/models/SpaceStation.js')
+    script(src='//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')
+    script(src='/static/js/views/SpaceStation.js')
