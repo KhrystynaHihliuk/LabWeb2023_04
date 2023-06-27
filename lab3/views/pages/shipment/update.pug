@@ -1,0 +1,24 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='shipment-edit-form' name='shipment-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(newShipment, 'id', shipment.id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='code') Code
+        div(class='col-md-9')
+          input(id='code' name='code' value=$fn.getPropOrDefault(newShipment, 'code', shipment.code) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='name') Name
+        div(class='col-md-9')
+          input(id='name' name='name' value=$fn.getPropOrDefault(newShipment, 'name', shipment.name) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='weight') Weight
+        div(class='col-md-9')
+          input(id='weight' name='weight' value=$fn.getPropOrDefault(newShipment, 'weight', shipment.weight) class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

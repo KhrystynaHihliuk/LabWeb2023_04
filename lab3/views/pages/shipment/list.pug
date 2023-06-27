@@ -1,0 +1,24 @@
+extends ../../layout
+
+block content
+  h3 Shipment List
+
+  a(href='/shipment/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th ID
+        th Code
+        th Name
+        th Weight
+    tbody
+      each shipment in shipments
+        tr
+          td #{shipment.id}
+          td #{shipment.code}
+          td #{shipment.name}
+          td #{shipment.weight}
+          td
+            a(href=`/shipment/edit/${shipment.id}` class="btn btn-default") Edit
+            a(href=`/shipment/remove/${shipment.id}` class="btn btn-default") Delete

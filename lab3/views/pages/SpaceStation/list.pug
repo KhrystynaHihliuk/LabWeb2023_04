@@ -1,0 +1,24 @@
+extends ../../layout
+
+block content
+  h3 SpaceStation List
+
+  a(href='/SpaceStation/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th ID
+        th Name
+        th Capacity
+        th Need
+    tbody
+      each SpaceStation in SpaceStations
+        tr
+          td #{SpaceStation.id}
+          td #{SpaceStation.name}
+          td #{SpaceStation.capacity}
+          td #{SpaceStation.need}
+          td
+            a(href=`/SpaceStation/edit/${SpaceStation.id}` class="btn btn-default") Edit
+            a(href=`/SpaceStation/remove/${SpaceStation.id}` class="btn btn-default") Delete

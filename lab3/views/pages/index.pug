@@ -1,0 +1,26 @@
+﻿extends ../layout
+
+block content
+  div(class='breadcrumb')
+    div= title
+  div.list-group
+    div.list-group-item
+      span(class='list-icon glyphicon glyphicon-briefcase')
+      a(href='/planet/list') Planets
+      a(href='/planet/add')
+        span(class='list-icon glyphicon glyphicon-plus')
+    div.list-group-item
+      span(class='list-icon glyphicon glyphicon-briefcase')
+      a(href='/SpaceStation/list') SpaceStation
+      a(href='/SpaceStation/add')
+        span(class='list-icon glyphicon glyphicon-plus')
+    div.list-group-item
+      span(class='list-icon glyphicon glyphicon-briefcase')
+      a(href='/shipment/list') Shipment
+      a(href='/shipment/add')
+        span(class='list-icon glyphicon glyphicon-plus')
+    div.list-group-item
+      span(class='list-icon glyphicon glyphicon-briefcase')
+      a(href='/DeliveredShipment/list') DeliveredShipment
+      a(href='/DeliveredShipment/add')
+        span(class='list-icon glyphicon glyphicon-plus')

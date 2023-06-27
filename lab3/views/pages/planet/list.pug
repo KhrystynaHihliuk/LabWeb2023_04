@@ -1,0 +1,24 @@
+extends ../../layout
+
+block content
+  h3 Planet List
+
+  a(href='/planet/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th ID
+        th Name
+        th StoreCapacity
+        th Mass
+    tbody
+      each planet in planets
+        tr
+          td #{planet.id}
+          td #{planet.name}
+          td #{planet.StoreCapacity}
+          td #{planet.mass}
+          td
+            a(href=`/planet/edit/${planet.id}` class="btn btn-default") Edit
+            a(href=`/planet/remove/${planet.id}` class="btn btn-default") Delete

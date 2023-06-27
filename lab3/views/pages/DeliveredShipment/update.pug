@@ -1,0 +1,25 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='DeliveredShipment-edit-form' name='DeliveredShipment-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(newDeliveredShipment, 'id', DeliveredShipment.id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='planet_id') Planet
+        div(class='col-md-9')
+          <select id='planet_id' name='planet_id' class='form-control'>
+          each planet in planets
+            option(value=planet.id selected=(planet.id == $fn.getPropOrDefault(newDeliveredShipment, 'planet', DeliveredShipment.planet))) Name:#{planet.name}; StoreCapacity:#{planet.StoreCapacity};  Mass:#{planet.mass};
+          </select>
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='spaceStation_id') SpaceStation
+        div(class='col-md-9')
+          <select id='spaceStation_id' name='spaceStation_id' class='form-control'>
+          each SpaceStation in SpaceStations
+            option(value=SpaceStation.id selected=(SpaceStation.id == $fn.getPropOrDefault(newDeliveredShipment, 'spaceStation', DeliveredShipment.spaceStation))) Name:#{SpaceStation.name}; Capacity:#{SpaceStation.capacity}; Need:#{SpaceStation.need};
+          </select>
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

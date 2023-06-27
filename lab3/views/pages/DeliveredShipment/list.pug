@@ -1,0 +1,22 @@
+extends ../../layout
+
+block content
+  h3 DeliveredShipment List
+
+  a(href='/DeliveredShipment/add' class="btn btn-default") Add
+
+  table(class="table")
+    thead
+      tr
+        th ID
+        th Planet
+        th SpaceStation
+    tbody
+      each DelShipment in DelShipments
+        tr
+          td #{DelShipment.id}
+          td #{DelShipment.planet}
+          td #{DelShipment.spaceStation}
+          td
+            a(href=`/DeliveredShipment/edit/${DelShipment.id}` class="btn btn-default") Edit
+            a(href=`/DeliveredShipment/remove/${DelShipment.id}` class="btn btn-default") Delete

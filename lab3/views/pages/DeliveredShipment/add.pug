@@ -1,0 +1,25 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='DeliveredShipment-add-form' name='DeliveredShipment-add-form' class='form-horizontal' method="POST" action='')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='planet_id') Planet
+        div(class='col-md-9')
+          <select id='planet_id' name='planet_id' class='form-control'>
+          each planet in planets
+            option(value=planet.id selected=(planet.id == $fn.getPropOrDefault(newDeliveredShipment, 'palanet', 0))) Name:#{planet.name}; StoreCapacity:#{planet.StoreCapacity};  Mass:#{planet.mass};
+          </select>
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='spaceStation_id') SpaceStation
+        div(class='col-md-9')
+          <select id='spaceStation_id' name='spaceStation_id' class='form-control'>
+          each SpaceStation in SpaceStations
+            option(value=SpaceStation.id selected=(SpaceStation.id == $fn.getPropOrDefault(newDeliveredShipment, 'SpaceStation', 0))) Name:#{SpaceStation.name}; Capacity:#{SpaceStation.capacity}; Need:#{SpaceStation.need};
+          </select>
+
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Create

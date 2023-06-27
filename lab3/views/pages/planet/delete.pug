@@ -1,0 +1,11 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='planet-delete-form' name='planet-delete-form' class='form-horizontal' method="POST" action='')
+      input(id='id' type="hidden" name='id' value=planet.id class='form-control')
+      div(class='form-group')
+        div(class='col-md-12') Name: #{planet.name}; StoreCapacity: #{planet.StoreCapacity}; Mass:  #{planet.mass};
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Delete

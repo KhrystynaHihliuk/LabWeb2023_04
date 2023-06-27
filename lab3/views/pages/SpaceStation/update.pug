@@ -1,0 +1,24 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='SpaceStation-edit-form' name='SpaceStation-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(newSpaceStation, 'id', SpaceStation.id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='name') Name
+        div(class='col-md-9')
+          input(id='name' name='name' value=$fn.getPropOrDefault(newSpaceStation, 'name', SpaceStation.name) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='capacity') Capacity
+        div(class='col-md-9')
+          input(id='capacity' name='capacity' value=$fn.getPropOrDefault(newSpaceStation, 'capacity',SpaceStation.capacity) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='need') Need
+        div(class='col-md-9')
+          input(id='need' name='need' value=$fn.getPropOrDefault(newSpaceStation, 'need', SpaceStation.need) class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update

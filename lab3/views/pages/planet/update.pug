@@ -1,0 +1,24 @@
+extends ../../layout
+
+block content
+  div(class='col-md-6')
+    form(id='planet-edit-form' name='planet-edit-form' class='form-horizontal' method="POST" action='')
+      input(id='id' name='id' value=$fn.getPropOrDefault(newPlanet, 'id', planet.id) type='hidden')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='name') Name
+        div(class='col-md-9')
+          input(id='name' name='name' value=$fn.getPropOrDefault(newPlanet, 'name', planet.name) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='StoreCapacity') StoreCapacity
+        div(class='col-md-9')
+          input(id='StoreCapacity' name='StoreCapacity' value=$fn.getPropOrDefault(newPlanet, 'surname', planet.StoreCapacity) class='form-control')
+      div(class='form-group')
+        div(class='col-md-3')
+          label(for='mass') Mass
+        div(class='col-md-9')
+          input(id='mass' name='mass' value=$fn.getPropOrDefault(newPlanet, 'mass', planet.mass) class='form-control')
+      div(class='form-group')
+        div(class='col-md-12')
+          button(type='submit' class='btn btn-primary') Update
